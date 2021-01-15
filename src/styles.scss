@@ -1,0 +1,36 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+img.heading{
+    width: 1455px;
+    @media (max-width: 991.98px) { 
+        width: 768px;
+     }
+}
+section:nth-of-type(1) {
+	height: 100vh;
+}
+
+.container-fluid {
+	height: 100%;
+	padding: 0;
+}
+
+.row {
+	height: 70%;
+}
+
+h4.openingPlanning{
+    position: relative;
+    right: -14%;
+    font-weight: bold;
+    @media (max-width: 991.98px) { 
+        right: -9%;
+     }
+}
+h4.editPlanning{
+    position: relative;
+    left: -6%;
+    font-weight: bold;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

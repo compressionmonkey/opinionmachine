@@ -1,0 +1,7 @@
+{
+    "/appointment/*": {
+        "target": "https://fierce-earth-17956.herokuapp.com/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
