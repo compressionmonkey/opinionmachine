@@ -11,9 +11,15 @@ import { MatInputModule } from '@angular/material/input'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbTimepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { ChaticonComponent } from './chaticon/chaticon.component';
+import { OfficefoundComponent } from './models/officefound/officefound.component';
+import { OfficenotfoundComponent } from './models/officenotfound/officenotfound.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ChaticonComponent,
+    OfficefoundComponent,
+    OfficenotfoundComponent,
   ],
   imports: [
     BrowserModule,

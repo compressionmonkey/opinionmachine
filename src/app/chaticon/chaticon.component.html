@@ -1,0 +1,20 @@
+<div *ngIf="!submitted else answer">
+<div id="chat-person">
+    <p id="officeName">What is the name of the office?</p>
+</div>
+<div id="chat-you">
+    <input id="nameoffice" [(ngModel)]="officename"/>
+    <p [hidden]="!error" id="error">Please enter an officename</p>
+    <button id="officesubmit" (click)="onClick()">Submit</button>
+    <!-- <button id="yes">Yes</button>
+    <button id="no">No</button> -->
+</div>
+</div>
+<ng-template #answer>
+    <div *ngIf="answer; else nooffice">
+    <app-officefound></app-officefound>
+    </div>
+    <ng-template #nooffice>
+        <app-officenotfound></app-officenotfound>
+    </ng-template>
+</ng-template>
