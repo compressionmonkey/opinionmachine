@@ -1,17 +1,22 @@
-<div *ngIf="!submitted else answer">
+<div *ngIf="!state.submitted else response">
 <div id="chat-person">
     <p id="officeName">What is the name of the office?</p>
 </div>
 <div id="chat-you">
-    <input id="nameoffice" [(ngModel)]="officename"/>
-    <p [hidden]="!error" id="error">Please enter an officename</p>
-    <button id="officesubmit" (click)="onClick()">Submit</button>
+    <input id="nameoffice" (change)="onChange($event)" [(ngModel)]="state.officename"/>
+    <div class="AutoCompleteText">
+    <ul>
+        <li *ngFor="let entry of state.suggestions" (click)="clickSuggestion(entry)">{{entry}}</li>
+    </ul>
+    </div>
+    <p [hidden]="!state.error" id="error">Please enter an officename</p>
+    <button id="officesubmit" (click)="onSubmit()">Submit</button>
     <!-- <button id="yes">Yes</button>
     <button id="no">No</button> -->
 </div>
 </div>
-<ng-template #answer>
-    <div *ngIf="answer; else nooffice">
+<ng-template #response>
+    <div *ngIf="state.answer; else nooffice">
     <app-officefound></app-officefound>
     </div>
     <ng-template #nooffice>
