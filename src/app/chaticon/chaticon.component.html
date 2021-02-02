@@ -2,8 +2,12 @@
 <div id="chat-person">
     <p id="officeName">What is the name of the office?</p>
 </div>
+<!-- write input for quick onchange
+(change)="onChange($event)" -->
 <div id="chat-you">
-    <input id="nameoffice" (change)="onChange($event)" [(ngModel)]="state.officename"/>
+    <input id="nameoffice" 
+    (input) = "onInput($event.target.value)"
+    [(ngModel)]="state.officename"/>
     <div class="AutoCompleteText">
     <ul>
         <li *ngFor="let entry of state.suggestions" (click)="clickSuggestion(entry)">{{entry}}</li>

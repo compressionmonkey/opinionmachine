@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../service/state.service'
+import { StateService } from '../service/state.service';
+
 @Component({
   selector: 'app-chaticon',
   templateUrl: './chaticon.component.html',
@@ -25,9 +26,8 @@ export class ChaticonComponent implements OnInit {
     this.state.officename = selected
     this.state.suggestions = []
   }
-
-  onChange(e){
-    const value = e.target.value
+  onInput(value: string){
+    console.log('here', value, this.state.officename)
     if(value.length === 0){
       this.state.suggestions = [];
     }
@@ -41,6 +41,10 @@ export class ChaticonComponent implements OnInit {
       this.state.suggestions = suggestions
     }
   }
+
+  // onChange(e){
+  //   // const value = e.target.value
+  // }
 
   onSubmit(){
   if(!this.state.officename){
